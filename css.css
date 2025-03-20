@@ -1,6 +1,6 @@
 body {
     background-color: rgb(143, 141, 145);
-    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("../Tokyo Travel/background.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("Tokyo Travel/background.png");
     background-blend-mode: multiply;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -17,6 +17,7 @@ body {
     margin-left: 50px;
     color: rgb(210, 175, 243);
     cursor: pointer;
+    font-size: 30px;
 }
 
 .location:hover {
@@ -28,6 +29,7 @@ body {
 
 .other_picture {
     color: rgb(219, 196, 233);
+    font-size: 30px;
 }
 
 .other_picture:hover {
@@ -59,6 +61,22 @@ body {
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 995px) {
+    .navbar-toggler {
+        font-size: 3rem;
+        padding: 1rem 1.5rem;
+    }
+    .navbar_button{
+        margin-left: 5px;
+        margin-top: 3px;
+        font-size: 3rem;
+        padding: 0.5rem 1rem;
+    }
+    .location,.other_picture{
+        font-size: 3rem;
+    }
 }
 
 /*ALL carousel css-------------------------------------------------------------------*/
@@ -129,10 +147,6 @@ body {
     margin-left: 30%;
 }
 
-#content_area2 {
-    display: none;
-}
-
 #content_area3 {
     display: none;
 }
@@ -140,6 +154,10 @@ body {
 #content_area4 {
     display: none;
     margin-bottom: 20px;
+}
+
+#myCarousel_1{
+    display: none;
 }
 
 .content_title {

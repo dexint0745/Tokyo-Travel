@@ -1,5 +1,6 @@
 let navbar_toggler = document.querySelector(".navbar-toggler");
 let myCarousel = document.getElementById("myCarousel");
+let myCarousel_1 = document.getElementById("myCarousel_1");
 let content_area1 = document.getElementById("content_area1");
 let content_area2 = document.getElementById("content_area2");
 let content_area3 = document.getElementById("content_area3");
@@ -115,7 +116,33 @@ document.body.onclick = function (event) {
                     content_1.textContent = `本次旅遊10天9夜目的地為東京、富士山腳下和仙台，過程中和同行的人拍攝了大量的照片，
                     其中精選的照片會在個別地區介紹展示，而其他照片則會放在旅遊雜圖區供人閱覽。之後會個別介紹旅遊行程及各地當時季節所呈現的風景，
                     大致的行程為東京⭢富士山⭢東京⭢仙台，可以藉由上方或下方地點選項選取要觀看的地區。`;
-                    content_area2.style.display = "none";
+                    content_area2.style.animationName = "content_area_zoom_back";
+                    content_title_2.innerHTML = "住宿位置";
+                    content_2.innerHTML = `第一天住宿: 位置是在御殿場的<a
+                        href="https://www.booking.com/hotel/jp/mantengesutohausu.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=-227996&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=35&hpos=10&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742463131&srpvid=a6f143090e68051d&type=total&ucfs=1&">noctarium
+                        - A Private Cinema
+                        Hotel</a>，這家是由電影院改裝而成的民宿，通常只夠租給一組旅客，可以容納很多人，裡面還有一個超大的投影布幕還有switch主機可供使用，也是我們這三天住的最特別的一間。<br>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.207975735297!2d138.93088087636812!3d35.30081345077667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60197644e613ee1b%3A0x82e5fc1231eee9ae!2s1988-17%20Niihashi%2C%20Gotemba%2C%20Shizuoka%20412-0043%E6%97%A5%E6%9C%AC!5e0!3m2!1szh-TW!2stw!4v1742465462865!5m2!1szh-TW!2stw"
+                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                    第二天住宿: 位置是在東京的<a
+                        href="https://www.booking.com/hotel/jp/yadoya-wu-wan-yuan.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=6303661&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742464150&srpvid=56a045070e46062f&type=total&ucfs=1&">YADOYA
+                        烏丸院</a>
+                    ，這家也是一間獨棟的民宿，有兩層樓可以容納6個人，出來步行5分鐘就能到地鐵站，是非常方便的位置，入住全程不用跟房東接觸，只要靠人臉辨識和進去輸入密碼就能搞定。<br>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481.47120845781063!2d139.79319810900773!3d35.72771118138986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188f8a2384bf97%3A0x4f130907504d1142!2z5a6_5a62IOeDj-S4uOmZog!5e0!3m2!1szh-TW!2stw!4v1742465562324!5m2!1szh-TW!2stw"
+                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                    第三天住宿: 位置是在仙台的<a
+                        href="https://www.booking.com/hotel/jp/keihan-sendai.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=5891043&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742464792&srpvid=c8044649255a060f&type=total&ucfs=1&">Hotel
+                        Keihan Sendai</a>
+                    ，這間就是正常的飯店，不過住起來也是很不錯，離仙台車站距離也不遠，要去哪裡都方便，附近也有商店街購物買東西也都很方便。<br>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.8516444887027!2d140.87408107646604!3d38.2597466840752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a283d465561eb%3A0xc1a6b0e58d9d8d62!2zMy1jaMWNbWUtMy01IENoxavFjSwgQW9iYSBXYXJkLCBTZW5kYWksIE1peWFnaSA5ODAtMDAyMeaXpeacrA!5e0!3m2!1szh-TW!2stw!4v1742465338436!5m2!1szh-TW!2stw"
+                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+                    myCarousel_1.style.display = "none";
                     content_area3.style.display = "none";
                     content_area4.style.display = "none";
                 }, 700);
@@ -173,6 +200,7 @@ document.body.onclick = function (event) {
                     content_4.innerHTML = `早上的淺草旅客非常多，拍完著名的"雷門"後裡面有非常多攤販可以邊逛街邊吃東西。
                     <br>到了傍晚準備前往晴空塔，裡面基本上就是百貨公司，逛著逛著正好遇到了台灣祭，裡面有眾多台灣著名的小吃，彷彿回到了台灣夜市。<br>
                     接著就登上塔頂俯瞰東京夜景，人潮一樣是非常多，也又販售一些晴空塔小物可供遊客做紀念。`;
+                    myCarousel_1.style.display = "block";
                 }, 700);
                 contentTFS_change();
                 carousel_target = 1;
@@ -213,6 +241,7 @@ document.body.onclick = function (event) {
                     content_title_4.innerHTML = "河口湖";
                     content_4.innerHTML = `這裡可以說是觀賞富士山最好的景點，隨便拍都是富士山。<br>來到這裡可以租腳踏車繞河口湖一圈，
                     由於正好是櫻花盛開的期間所以可以沿途欣賞櫻花，礙於時間不夠只繞了約三分之一就打道回府了。`;
+                    myCarousel_1.style.display = "block";
                 }, 700);
                 contentTFS_change();
                 carousel_target = 2;
@@ -253,6 +282,7 @@ document.body.onclick = function (event) {
                     content_title_4.innerHTML = "仙台城";
                     content_4.innerHTML = `是江戶時代初期所建造的城，雖然現場大部分都已經被拆光了，但有博物館可以參觀，來了解江戶時代的歷史。
                     <br>伊達政宗是這座城的建造者，所以也立了伊達政宗像在遺址裡。遺址附近的瑞鳳殿，則是供奉伊達政宗的地方。`;
+                    myCarousel_1.style.display = "block";
                 }, 700);
                 contentTFS_change();
                 carousel_target = 3;
