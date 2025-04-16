@@ -1,289 +1,562 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Tokyo Travel</title>
-    <meta name="viewport" content="user-scalable=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <meta name="viewport" content="user-scalable=no" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <link rel="stylesheet" href="css.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="css.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <div id="navbar_back" onclick="navbar_back_func()">
-    </div>
-    <nav class="navbar fixed-top navbar-expand-lg"
-        style="background:linear-gradient(90deg,rgb(180, 151, 194),rgb(157, 118, 177)) ;">
-        <div class="container-fluid">
-            <a class="navbar-brand"><img src="brand.png" alt="" width="250" height="60"
-                    class="d-inline-block align-text-top"></a>
-            <button class="navbar-toggler navbar_button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbar1">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar1">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link fst-italic fw-bold location" id="index_button">首頁</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link fst-italic fw-bold location" id="Tokyo_button">東京市區</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link fst-italic fw-bold location" id="Fujisan_button">富士山</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link fst-italic fw-bold location" id="Sendai_button">仙台</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link fst-italic fw-bold other_picture" href="#">旅遊雜圖區</a>
-                    </li>
-                </ul>
-            </div>
+  <body>
+    <div id="navbar_back" onclick="navbar_back_func()"></div>
+    <nav
+      class="navbar fixed-top navbar-expand-lg"
+      style="
+        background: linear-gradient(
+          90deg,
+          rgb(180, 151, 194),
+          rgb(157, 118, 177)
+        );
+      "
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand"
+          ><img
+            src="brand.png"
+            alt=""
+            width="250"
+            height="60"
+            class="d-inline-block align-text-top"
+        /></a>
+        <button
+          class="navbar-toggler navbar_button"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar1"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link fst-italic fw-bold location" id="index_button"
+                >首頁</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fst-italic fw-bold location" id="Tokyo_button"
+                >東京市區</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fst-italic fw-bold location"
+                id="Fujisan_button"
+                >富士山</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fst-italic fw-bold location" id="Sendai_button"
+                >仙台</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link fst-italic fw-bold other_picture"
+                href="https://dexint0745.github.io/Tokyo-Travel-Image/"
+                >旅遊雜圖區</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <div class="navbar_back"></div>
     <main>
+      <div id="carousel_css">
+        <div
+          id="myCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-theme="dark"
+          style="width: 50%"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="0"
+              class="active"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="4"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="5"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <img
+                src="picture/東京/東京1.jpg"
+                class="d-block w-100 carousel_img"
+                id="carousel_img1"
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img
+                src="picture\富士山\富士山1.jpg"
+                class="d-block w-100 carousel_img"
+                id="carousel_img2"
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img
+                src="picture\仙台\仙台1.jpg"
+                class="d-block w-100 carousel_img"
+                id="carousel_img3"
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img
+                src="picture\東京\東京2.jpg"
+                class="d-block w-100 carousel_img"
+                id="carousel_img4"
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img
+                src="picture\富士山\富士山2.jpg"
+                class="d-block w-100 carousel_img"
+                id="carousel_img5"
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img
+                src="picture\仙台\仙台2.jpg"
+                class="d-block w-100 carousel_img"
+                id="carousel_img6"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div id="content_area1" class="content_animation content_area">
+        <div class="content_title">
+          <h1 style="font-weight: bold" id="content_title_1">旅遊簡介</h1>
+        </div>
+        <div class="content">
+          <h3 style="font-weight: bold" id="content_1">
+            本次旅遊10天9夜目的地為東京、富士山腳下和仙台，過程中和同行的人拍攝了大量的照片，其中精選的照片會在個別地區介紹展示，而其他照片則會放在旅遊雜圖區供人閱覽。之後會個別介紹旅遊行程及各地當時季節所呈現的風景
+            ，大致的行程為東京->富士山->東京->仙台，可以藉由上方或下方地點選項選取要觀看的地區。
+          </h3>
+        </div>
+      </div>
+      <div id="content_area2" class="content_animation content_area">
+        <div
+          class="content_title"
+          style="background-color: rgba(217, 231, 138, 0.5)"
+        >
+          <h1 style="font-weight: bold" id="content_title_2">住宿位置</h1>
+        </div>
         <div id="carousel_css">
-            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-theme="dark"
-                style="width: 50%;">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="3000">
-                        <img src="picture/東京/東京1.jpg" class="d-block w-100 carousel_img" id="carousel_img1">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                        <img src="picture\富士山\富士山1.jpg" class="d-block w-100 carousel_img" id="carousel_img2">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                        <img src="picture\仙台\仙台1.jpg" class="d-block w-100 carousel_img" id="carousel_img3">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                        <img src="picture\東京\東京2.jpg" class="d-block w-100 carousel_img" id="carousel_img4">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                        <img src="picture\富士山\富士山2.jpg" class="d-block w-100 carousel_img" id="carousel_img5">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                        <img src="picture\仙台\仙台2.jpg" class="d-block w-100 carousel_img" id="carousel_img6">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+          <div
+            id="myCarousel_1"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+            data-bs-theme="dark"
+            style="width: 100%"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#myCarousel_1"
+                data-bs-slide-to="0"
+                class="active"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel_1"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel_1"
+                data-bs-slide-to="2"
+              ></button>
             </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="picture\東京\千鳥淵綠道1.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_img1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="picture\東京\千鳥淵綠道2.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_img2"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="picture\東京\千鳥淵綠道3.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_img3"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#myCarousel_1"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#myCarousel_1"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
-        <div id="content_area1" class="content_animation content_area">
-            <div class="content_title">
-                <h1 style="font-weight: bold;" id="content_title_1">旅遊簡介</h1>
-            </div>
-            <div class="content">
-                <h3 style="font-weight: bold;" id="content_1">
-                    本次旅遊10天9夜目的地為東京、富士山腳下和仙台，過程中和同行的人拍攝了大量的照片，其中精選的照片會在個別地區介紹展示，而其他照片則會放在旅遊雜圖區供人閱覽。之後會個別介紹旅遊行程及各地當時季節所呈現的風景
-                    ，大致的行程為東京->富士山->東京->仙台，可以藉由上方或下方地點選項選取要觀看的地區。
-                </h3>
-            </div>
+        <div class="content" style="background-color: rgba(217, 231, 138, 0.5)">
+          <h3 style="font-weight: bold" id="content_2">
+            第一天住宿: 位置是在御殿場的<a
+              href="https://www.booking.com/hotel/jp/mantengesutohausu.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=-227996&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=35&hpos=10&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742463131&srpvid=a6f143090e68051d&type=total&ucfs=1&"
+              >noctarium - A Private Cinema Hotel</a
+            >，這家是由電影院改裝而成的民宿，通常只夠租給一組旅客，可以容納很多人，裡面還有一個超大的投影布幕還有switch主機可供使用，也是我們這三天住的最特別的一間。<br />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.207975735297!2d138.93088087636812!3d35.30081345077667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60197644e613ee1b%3A0x82e5fc1231eee9ae!2s1988-17%20Niihashi%2C%20Gotemba%2C%20Shizuoka%20412-0043%E6%97%A5%E6%9C%AC!5e0!3m2!1szh-TW!2stw!4v1742465462865!5m2!1szh-TW!2stw"
+              width="400"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe
+            ><br />
+            第二天住宿: 位置是在東京的<a
+              href="https://www.booking.com/hotel/jp/yadoya-wu-wan-yuan.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=6303661&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742464150&srpvid=56a045070e46062f&type=total&ucfs=1&"
+              >YADOYA 烏丸院</a
+            >
+            ，這家也是一間獨棟的民宿，有兩層樓可以容納6個人，出來步行5分鐘就能到地鐵站，是非常方便的位置，入住全程不用跟房東接觸，只要靠人臉辨識和進去輸入密碼就能搞定。<br />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481.47120845781063!2d139.79319810900773!3d35.72771118138986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188f8a2384bf97%3A0x4f130907504d1142!2z5a6_5a62IOeDj-S4uOmZog!5e0!3m2!1szh-TW!2stw!4v1742465562324!5m2!1szh-TW!2stw"
+              width="400"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe
+            ><br />
+            第三天住宿: 位置是在仙台的<a
+              href="https://www.booking.com/hotel/jp/keihan-sendai.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=5891043&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742464792&srpvid=c8044649255a060f&type=total&ucfs=1&"
+              >Hotel Keihan Sendai</a
+            >
+            ，這間就是正常的飯店，不過住起來也是很不錯，離仙台車站距離也不遠，要去哪裡都方便，附近也有商店街購物買東西也都很方便。<br />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.8516444887027!2d140.87408107646604!3d38.2597466840752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a283d465561eb%3A0xc1a6b0e58d9d8d62!2zMy1jaMWNbWUtMy01IENoxavFjSwgQW9iYSBXYXJkLCBTZW5kYWksIE1peWFnaSA5ODAtMDAyMeaXpeacrA!5e0!3m2!1szh-TW!2stw!4v1742465338436!5m2!1szh-TW!2stw"
+              width="400"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </h3>
         </div>
-        <div id="content_area2" class="content_animation content_area">
-            <div class="content_title" style="background-color: rgba(217, 231, 138, 0.5);">
-                <h1 style="font-weight: bold;" id="content_title_2">住宿位置</h1>
-            </div>
-            <div id="carousel_css">
-                <div id="myCarousel_1" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-theme="dark"
-                    style="width: 100%;">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#myCarousel_1" data-bs-slide-to="0"
-                            class="active"></button>
-                        <button type="button" data-bs-target="#myCarousel_1" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#myCarousel_1" data-bs-slide-to="2"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="picture\東京\千鳥淵綠道1.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_img1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="picture\東京\千鳥淵綠道2.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_img2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="picture\東京\千鳥淵綠道3.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_img3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel_1"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel_1"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <div class="content" style="background-color: rgba(217, 231, 138, 0.5);">
-                <h3 style="font-weight: bold;" id="content_2">
-                    第一天住宿: 位置是在御殿場的<a
-                        href="https://www.booking.com/hotel/jp/mantengesutohausu.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=-227996&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=35&hpos=10&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742463131&srpvid=a6f143090e68051d&type=total&ucfs=1&">noctarium
-                        - A Private Cinema
-                        Hotel</a>，這家是由電影院改裝而成的民宿，通常只夠租給一組旅客，可以容納很多人，裡面還有一個超大的投影布幕還有switch主機可供使用，也是我們這三天住的最特別的一間。<br>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.207975735297!2d138.93088087636812!3d35.30081345077667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60197644e613ee1b%3A0x82e5fc1231eee9ae!2s1988-17%20Niihashi%2C%20Gotemba%2C%20Shizuoka%20412-0043%E6%97%A5%E6%9C%AC!5e0!3m2!1szh-TW!2stw!4v1742465462865!5m2!1szh-TW!2stw"
-                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                    第二天住宿: 位置是在東京的<a
-                        href="https://www.booking.com/hotel/jp/yadoya-wu-wan-yuan.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=6303661&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742464150&srpvid=56a045070e46062f&type=total&ucfs=1&">YADOYA
-                        烏丸院</a>
-                    ，這家也是一間獨棟的民宿，有兩層樓可以容納6個人，出來步行5分鐘就能到地鐵站，是非常方便的位置，入住全程不用跟房東接觸，只要靠人臉辨識和進去輸入密碼就能搞定。<br>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481.47120845781063!2d139.79319810900773!3d35.72771118138986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188f8a2384bf97%3A0x4f130907504d1142!2z5a6_5a62IOeDj-S4uOmZog!5e0!3m2!1szh-TW!2stw!4v1742465562324!5m2!1szh-TW!2stw"
-                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                    第三天住宿: 位置是在仙台的<a
-                        href="https://www.booking.com/hotel/jp/keihan-sendai.zh-tw.html?aid=397594&label=gog235jc-1FCAEoggI46AdIMFgDaHWIAQGYATC4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AobB774GwAIB0gIkZDk5MmE3YTAtZDVmYy00MzAxLWJiMWQtOGRiYWVmNzY2NjI22AIF4AIB&sid=f2b928e903539270f07be8c68b8ee57c&dest_id=5891043&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1742464792&srpvid=c8044649255a060f&type=total&ucfs=1&">Hotel
-                        Keihan Sendai</a>
-                    ，這間就是正常的飯店，不過住起來也是很不錯，離仙台車站距離也不遠，要去哪裡都方便，附近也有商店街購物買東西也都很方便。<br>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.8516444887027!2d140.87408107646604!3d38.2597466840752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a283d465561eb%3A0xc1a6b0e58d9d8d62!2zMy1jaMWNbWUtMy01IENoxavFjSwgQW9iYSBXYXJkLCBTZW5kYWksIE1peWFnaSA5ODAtMDAyMeaXpeacrA!5e0!3m2!1szh-TW!2stw!4v1742465338436!5m2!1szh-TW!2stw"
-                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </h3>
-            </div>
+      </div>
+      <div id="content_area3" class="content_area">
+        <div
+          class="content_title"
+          style="background-color: rgba(217, 231, 138, 0.5)"
+        >
+          <h1 style="font-weight: bold" id="content_title_3"></h1>
         </div>
-        <div id="content_area3" class="content_area">
-            <div class="content_title" style="background-color: rgba(217, 231, 138, 0.5);">
-                <h1 style="font-weight: bold;" id="content_title_3"></h1>
+        <div id="carousel_css">
+          <div
+            id="myCarousel_2"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+            data-bs-theme="dark"
+            style="width: 100%"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#myCarousel_2"
+                data-bs-slide-to="0"
+                class="active"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel_2"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel_2"
+                data-bs-slide-to="2"
+              ></button>
             </div>
-            <div id="carousel_css">
-                <div id="myCarousel_2" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-theme="dark"
-                    style="width: 100%;">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#myCarousel_2" data-bs-slide-to="0"
-                            class="active"></button>
-                        <button type="button" data-bs-target="#myCarousel_2" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#myCarousel_2" data-bs-slide-to="2"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="picture\東京\江之島1.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_2_img1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="picture\東京\江之島2.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_2_img2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="picture\東京\江之島3.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_2_img3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel_2"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel_2"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="picture\東京\江之島1.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_2_img1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="picture\東京\江之島2.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_2_img2"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="picture\東京\江之島3.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_2_img3"
+                />
+              </div>
             </div>
-            <div class="content" style="background-color: rgba(217, 231, 138, 0.5);">
-                <h3 style="font-weight: bold;" id="content_3">
-                </h3>
-            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#myCarousel_2"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#myCarousel_2"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
-        <div id="content_area4" class="content_area">
-            <div class="content_title" style="background-color: rgba(217, 231, 138, 0.5);">
-                <h1 style="font-weight: bold;" id="content_title_4"></h1>
-            </div>
-            <div id="carousel_css">
-                <div id="myCarousel_3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-theme="dark"
-                    style="width: 100%;">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#myCarousel_3" data-bs-slide-to="0"
-                            class="active"></button>
-                        <button type="button" data-bs-target="#myCarousel_3" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#myCarousel_3" data-bs-slide-to="2"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="picture\東京\東京市區1.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_3_img1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="picture\東京\東京市區2.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_3_img2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="picture\東京\東京市區3.jpg" class="d-block w-100 carousel_img"
-                                id="carousel_content_3_img3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel_3"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel_3"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <div class="content" style="background-color: rgba(217, 231, 138, 0.5);">
-                <h3 style="font-weight: bold;" id="content_4">
-                </h3>
-            </div>
+        <div class="content" style="background-color: rgba(217, 231, 138, 0.5)">
+          <h3 style="font-weight: bold" id="content_3"></h3>
         </div>
-        <div id="content_button" class="content_animation">
-            <div class="content_button1" id="Tokyo_content_button">
-                <h1 style="font-weight: bold;font-family:'Kosugi Maru'; color: rgb(223, 209, 15);">東京市區</h1>
-                <img src="button_background1.png" alt="">
-            </div>
-            <div class="content_button2" id="Fujisan_content_button">
-                <img src="button_background2.png" alt="">
-                <h1 style="font-weight: bold; font-family: 'Kosugi Maru'; color: rgb(50, 116, 216);">富士山</h1>
-            </div>
-            <div class="content_button3" id="Sendai_content_button">
-                <h1 style="font-weight: bold; font-family: 'Kosugi Maru';color: rgb(121, 212, 109);">仙台</h1>
-                <img src="button_background3.png" alt="">
-            </div>
+      </div>
+      <div id="content_area4" class="content_area">
+        <div
+          class="content_title"
+          style="background-color: rgba(217, 231, 138, 0.5)"
+        >
+          <h1 style="font-weight: bold" id="content_title_4"></h1>
         </div>
+        <div id="carousel_css">
+          <div
+            id="myCarousel_3"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+            data-bs-theme="dark"
+            style="width: 100%"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#myCarousel_3"
+                data-bs-slide-to="0"
+                class="active"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel_3"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel_3"
+                data-bs-slide-to="2"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="picture\東京\東京市區1.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_3_img1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="picture\東京\東京市區2.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_3_img2"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="picture\東京\東京市區3.jpg"
+                  class="d-block w-100 carousel_img"
+                  id="carousel_content_3_img3"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#myCarousel_3"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#myCarousel_3"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="content" style="background-color: rgba(217, 231, 138, 0.5)">
+          <h3 style="font-weight: bold" id="content_4"></h3>
+        </div>
+      </div>
+      <div id="content_button" class="content_animation">
+        <div class="content_button1" id="Tokyo_content_button">
+          <h1
+            style="
+              font-weight: bold;
+              font-family: 'Kosugi Maru';
+              color: rgb(223, 209, 15);
+            "
+          >
+            東京市區
+          </h1>
+          <img src="button_background1.png" alt="" />
+        </div>
+        <div class="content_button2" id="Fujisan_content_button">
+          <img src="button_background2.png" alt="" />
+          <h1
+            style="
+              font-weight: bold;
+              font-family: 'Kosugi Maru';
+              color: rgb(50, 116, 216);
+            "
+          >
+            富士山
+          </h1>
+        </div>
+        <div class="content_button3" id="Sendai_content_button">
+          <h1
+            style="
+              font-weight: bold;
+              font-family: 'Kosugi Maru';
+              color: rgb(121, 212, 109);
+            "
+          >
+            仙台
+          </h1>
+          <img src="button_background3.png" alt="" />
+        </div>
+      </div>
     </main>
-    <div id="to_top" onclick="to_top_func()">
-        ▲
-    </div>
-    <div id="to_top_phone" onclick="to_top_phone_func()">
-        to Top
-    </div>
+    <div id="to_top" onclick="to_top_func()">▲</div>
+    <div id="to_top_phone" onclick="to_top_phone_func()">to Top</div>
     <footer class="footer">
-        <div id="foot">
-            <p class="footer-text">Copyright © 2025 ののの All Rights Reserved.</p>
-        </div>
+      <div id="foot">
+        <p class="footer-text">Copyright © 2025 ののの All Rights Reserved.</p>
+      </div>
     </footer>
     <script src="javascript.js"></script>
-</body>
-
+  </body>
 </html>
